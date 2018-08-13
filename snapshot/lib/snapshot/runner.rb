@@ -12,6 +12,7 @@ require_relative 'reports_generator'
 require_relative 'simulator_launchers/simulator_launcher'
 require_relative 'simulator_launchers/simulator_launcher_xcode_8'
 require_relative 'simulator_launchers/launcher_configuration'
+require 'pry'
 
 module Snapshot
   class Runner
@@ -122,6 +123,7 @@ module Snapshot
       UI.verbose("Checking that helper files contain #{current_version}")
 
       helper_files = Update.find_helper
+      binding.pry
       helper_files.each do |path|
         content = File.read(path)
 
